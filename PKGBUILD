@@ -1,9 +1,9 @@
 pkgname=python3-fildem
 pkgver=0.6.5
 pkgrel=1
-pkgdesc="This project is a fork of gnomehud with the adition of a global menu bar"
+pkgdesc="This project is a fork of fildem with removed global keybindings"
 arch=('i686' 'x86_64')
-url="https://github.com/gonzaarcr/fildem"
+url="https://github.com/alpsha/fildem"
 depends=('bamf'
          'appmenu-gtk-module'
          'libkeybinder3'
@@ -11,7 +11,7 @@ depends=('bamf'
          'libdbusmenu-gtk3')
 makedepends=('git')
 provides=("python3-fildem=$pkgver")
-source=('git+https://github.com/gonzaarcr/fildem.git')
+source=('git+https://github.com/AlpSha/Fildem.git')
 md5sums=('SKIP')
 
 pkgver() {
