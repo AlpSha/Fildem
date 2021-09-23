@@ -96,15 +96,6 @@ class DbusMenu:
 		self.proxy = dbus.SessionBus().get_object(MyService.BUS_NAME, MyService.BUS_PATH)
 		self.proxy.EchoMenuOnOff(on)
 
-	def _handle_shortcuts(self, top_level_menus):
-		self.keyb.remove_all_keybindings()
-		for label in top_level_menus:
-			idx = label.find('_')
-			if idx == -1:
-				continue
-			c = label[idx + 1]
-			self.keyb.add_keybinding(c)
-
 	def _retry_init(self):
 		self.retry_timer_id = 0
 		self._init_window()
@@ -120,7 +111,6 @@ class DbusMenu:
 
 	def _update(self):
 		self._update_menus()
-		self._handle_shortcuts(self._menu_model.top_level_menus)
 		self._send_msg(self._menu_model.top_level_menus)
 
 	def _send_msg(self, top_level_menus):
